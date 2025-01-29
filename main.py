@@ -1,7 +1,10 @@
-from sys import exit
-
+import pygame as pg
 
 from loguru import logger
+from sys import exit
+
+pg.init()
+
 
 logger.add(
     'logs/error.log',
@@ -12,25 +15,15 @@ logger.add(
 
 @logger.catch
 def main():
-    import pygame as pg
-    pg.init()
     from classes.classGame import Game
-    
     game = Game()
     game.runGame()
-    
-    pg.quit()
+
 
 if __name__ == '__main__':
-    # для отладки игры
+    # try:
     main()
+    # finally:
+    pg.quit()
     exit()
 
-    # для продакшн
-    '''
-    try:
-        main()
-    finally:
-        pg.quit()
-        exit()
-    '''
