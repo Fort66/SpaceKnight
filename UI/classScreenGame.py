@@ -12,22 +12,19 @@ class ScreenGame:
     color: str | tuple[int, int, int] = 'SteelBlue'
     caption: str = 'Game'
     icon: str = ''
-    isResizable: bool = False # изменяемый размер окна
-    isFullScreen: bool = False # полноэкранный режим
-    
-    
+    isResizable: bool = False
+    isFullScreen: bool = False
+
     def __post_init__(self):
         if self.isResizable:
             self.win = set_mode(self.size, RESIZABLE)
         elif self.isFullScreen:
-            # получаем текущее разрешение экрана
             self.currentScreenResolution = get_desktop_sizes()[0]
             print(self.currentScreenResolution)
             self.win = set_mode(self.currentScreenResolution, FULLSCREEN)
         else:
-            # устанавливаем размер окна через size
             self.win = set_mode(self.size)
-        # устанавливаем заголовок
-        self.caption = set_caption(self.caption)
-        # устанавливаем иконку
-        self.icon = set_icon(load(self.icon))
+        if self.caption:
+            self.caption = set_caption(self.caption)
+        if self.icon:
+            self.icon = set_icon(load(self.icon))

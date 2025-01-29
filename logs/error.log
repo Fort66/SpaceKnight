@@ -1,0 +1,58 @@
+2025-01-29T11:33:36.363020+0300 ERROR An error has been caught in function '<module>', process 'MainProcess' (22704), thread 'MainThread' (22360):
+Traceback (most recent call last):
+
+> File "z:\TrainingProgram\11_1_24_1\SpaceKnight\main.py", line 25, in <module>
+    main()
+    └ <function main at 0x0000018C46B218A0>
+
+  File "z:\TrainingProgram\11_1_24_1\SpaceKnight\main.py", line 18, in main
+    from classes.classGame import Game
+
+  File "z:\TrainingProgram\11_1_24_1\SpaceKnight\classes\classGame.py", line 6, in <module>
+    from config.createObjects import screen
+
+  File "z:\TrainingProgram\11_1_24_1\SpaceKnight\config\createObjects.py", line 9, in <module>
+    screen = ScreenGame(size = (1280, 768),
+             └ <class 'UI.classScreenGame.ScreenGame'>
+
+  File "<string>", line 9, in __init__
+
+  File "z:\TrainingProgram\11_1_24_1\SpaceKnight\UI\classScreenGame.py", line 33, in __post_init__
+    self.icon = set_icon(load(self.icon))
+    │    │      │        │    │    └ 'images/icon.jpg'
+    │    │      │        │    └ ScreenGame(size=(1280, 768), color='SteelBlue', caption=None, icon='images/icon.jpg', isResizable=False, isFullScreen=False)
+    │    │      │        └ <built-in function load>
+    │    │      └ <built-in function set_icon>
+    │    └ 'images/icon.jpg'
+    └ ScreenGame(size=(1280, 768), color='SteelBlue', caption=None, icon='images/icon.jpg', isResizable=False, isFullScreen=False)
+
+FileNotFoundError: No file 'images/icon.jpg' found in working directory 'Z:\TrainingProgram\11_1_24_1\SpaceKnight'.
+2025-01-29T11:35:23.306729+0300 ERROR An error has been caught in function '<module>', process 'MainProcess' (14268), thread 'MainThread' (23480):
+Traceback (most recent call last):
+
+> File "z:\TrainingProgram\11_1_24_1\SpaceKnight\main.py", line 25, in <module>
+    main()
+    └ <function main at 0x0000018C23FB18A0>
+
+  File "z:\TrainingProgram\11_1_24_1\SpaceKnight\main.py", line 18, in main
+    from classes.classGame import Game
+
+  File "z:\TrainingProgram\11_1_24_1\SpaceKnight\classes\classGame.py", line 6, in <module>
+    from config.createObjects import screen
+
+  File "z:\TrainingProgram\11_1_24_1\SpaceKnight\config\createObjects.py", line 9, in <module>
+    screen = ScreenGame(size = (1280, 768),
+             └ <class 'UI.classScreenGame.ScreenGame'>
+
+  File "<string>", line 9, in __init__
+
+  File "z:\TrainingProgram\11_1_24_1\SpaceKnight\UI\classScreenGame.py", line 33, in __post_init__
+    self.icon = set_icon(load(self.icon))
+    │    │      │        │    │    └ ''
+    │    │      │        │    └ ScreenGame(size=(1280, 768), color='SteelBlue', caption=None, icon='', isResizable=False, isFullScreen=False)
+    │    │      │        └ <built-in function load>
+    │    │      └ <built-in function set_icon>
+    │    └ ''
+    └ ScreenGame(size=(1280, 768), color='SteelBlue', caption=None, icon='', isResizable=False, isFullScreen=False)
+
+FileNotFoundError: No file '' found in working directory 'Z:\TrainingProgram\11_1_24_1\SpaceKnight'.
